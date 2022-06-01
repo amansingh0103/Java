@@ -1,5 +1,5 @@
 package corejava;
-
+//import required packages
 import java.io.*;  
 
 public class BufferWriterExpression{
@@ -16,7 +16,7 @@ public static void main(String[] args) throws Exception {
 	
     //Call close() Method
     buffer.close();  
-	
+	//printing output
     System.out.println("Success");  
 	
     } 
