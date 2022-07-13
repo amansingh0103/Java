@@ -1,0 +1,880 @@
+Q 1: Maria works as a Programmer for BlueMoon Inc. She writes the following program:
+import java.util.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ System.out.format("Total=%d%nPercent=%d%%",300,40); 
+ } 
+} 
+
+B. The program will display:
+Total=300
+Percent=40%
+
+
+Which of the following statements about the regex API are true?
+A. The package java.util.regex contains classes for matching character sequences against patterns specified
+by regular expressions.
+B. The package java.util.regex includes an exception called PatternSyntaxException.
+
+
+Q 3: Neha works as a Programmer for SoftNet Inc.  She writes the following program:
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ String s="usingsplitfunction"; 
+ String[]ex=s.split("i"); 
+ for(int i=0;i<ex.length;i++) { 
+ System.out.println(ex[i]); 
+ } 
+ } 
+}  
+
+D. It will produce the output as:  
+usngspltfuncton
+
+Q 4: John Smith works as a Programmer for BlueMoon Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ String s1="a1b2c3d4ef"; 
+ String[]ex=s1.split("\\d",3); 
+ for(String s2:ex) { 
+ System.out.print(s2); 
+ } 
+} } 
+
+C. It will produce the output as:  
+abc3d4ef
+
+Q 5: Imagine you work as a Programmer in SoftTech Inc. You write the following program:
+import java.util.regex.*; //1 
+public class TryQuestion{ //2 
+public static void main(String str[]){ //3 
+String s="Preparing 4 SCJP exam"; //4 
+ //put the code here //5 
+System.out.println(c.length); //6 
+}} 
+
+B.    String[] c=s.split(“\\d”)
+
+Q 6: Sam works as a Programmer for BlueMoon Inc. He writes the following program:
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ try { 
+ FileWriter fw = new FileWriter("filereadwrite.txt"); 
+ BufferedWriter bw=new BufferedWriter(fw); 
+ bw.write("have a good day"); 
+ bw.close(); 
+ FileReader fr = new FileReader("filereadwrite.txt"); 
+ BufferedReader br = new BufferedReader(fr); 
+ br.read(); 
+ br.read(); 
+ br.skip(8); 
+ System.out.println((char)br.read()); 
+ br.close(); 
+ } 
+ catch(IOException e) { 
+ System.out.println("IOException : "+e.toString()); 
+ } 
+ } 
+}
+
+B.    It will produce the output as “d”.
+
+Q 7: Mr. Paul works as a Programmer for BlueMoon Inc. He writes the following program:
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ try { 
+ Square sq=new Square(10); 
+ Circle ci=new Circle(7); 
+ System.out.println("Before Serialization"); 
+ sq.drawShape(); 
+ ci.drawShape(); 
+ ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream 
+ ("shapes.txt")); 
+ oos.writeObject(sq); 
+ oos.writeObject(ci); 
+ oos.close(); 
+ ObjectInputStream ois=new ObjectInputStream(new FileInputStream 
+ ("shapes.txt")); 
+ sq=((Square)ois.readObject()); 
+ ci=((Circle)ois.readObject()); 
+ System.out.println("After Serialization"); 
+ sq.drawShape(); 
+ ci.drawShape(); 
+ } catch (Exception e) { e.printStackTrace(); } 
+ } 
+} 
+abstract class DrawObject { 
+ public abstract void drawShape(); 
+} 
+Question Bank 3: API Contents   5 
+class Square extends DrawObject { 
+ private int x; 
+ public Square (int x) { 
+ this.x=x; 
+ } 
+ public void drawShape() { 
+ System.out.println("The side of a square is : "+x); 
+ } 
+} 
+class Circle extends DrawObject { 
+ private int rad; 
+ public Circle(int rad) { 
+ this.rad=rad; 
+ } 
+ public void drawShape() { 
+ System.out.println("The radius of a circle is : "+rad); 
+ } 
+}
+
+D. It will display the output as:  
+Before Serialization
+The side of a square is : 10
+The radius of a circle is : 7
+
+Q 8: John works as a Java Programmer for BlueMoon Inc. His computer system does not have any instance of
+‘LabManualTest.txt’ file. John writes the following program:  
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ File file = new File ("LabManualTest.txt"); 
+ System.out.println("The existence of file is : "+file.exists()); 
+ } 
+} 
+
+B.   It will produce the output as:
+The existence of file is : false
+
+Q 9: Mehtab works as a Programmer for Kogent Solutions Inc. He writes the following program:
+import java.text.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ try { 
+ String num="one23456.789"; 
+ NumberFormat form = NumberFormat.getInstance(); 
+ System.out.println("Before parse the number is : "+form.parse(num)); 
+ form.setParseIntegerOnly(true); 
+ System.out.println("After parse the number is : "+form.parse(num)); 
+ }catch(ParseException pe) 
+ { 
+ System.out.println("Parse Exception thrown"); 
+}}}
+
+D. It will compile successfully, but throw a runtime
+exception ParseException
+
+Q 10: Smith works as a Software Developer for BlueMoon Inc. He writes the following program:
+import java.util.regex.*; 
+import java.util.*; 
+public class TryQuestion { 
+public static void main(String str[]) { 
+Pattern pat=Pattern.compile("[1-9&&[^468]]*"); 
+Matcher mat=null; 
+mat=pat.matcher("12345"); 
+System.out.println(mat.matches()); 
+mat=pat.matcher("12579"); 
+System.out.println(mat.matches()); 
+} 
+}
+
+C. It will produce the output as:
+false
+true
+
+Q 11: Kabir works as a Software Developer for SoftSample Inc. He writes the following program:
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String[] args) throws IOException, 
+ ClassNotFoundException { 
+ MyBean sc = new MyBean("Test1", "Test2"); 
+ System.out.println("Before:\n" + sc); 
+ FileOutputStream fos = new FileOutputStream("abc.txt"); 
+ ObjectOutputStream o = new ObjectOutputStream(fos); 
+ o.writeObject(sc); 
+ o.close(); 
+ FileInputStream fis = new FileInputStream("abc.txt"); 
+ ObjectInputStream in = new ObjectInputStream(fis); 
+ MyBean sc2 = (MyBean) in.readObject(); 
+ System.out.println("After:\n" + sc2); 
+ } 
+} 
+class MyBean implements Serializable { 
+ private String a; 
+ private transient String b; 
+ public MyBean(String aa, String bb) { 
+ a = "Not Transient: " + aa; 
+ b = "Transient: " + bb; 
+ } 
+ public String toString() { 
+ return a + "\n" + b; 
+ } 
+ private void writeObject(ObjectOutputStream stream) throws IOException { 
+ stream.defaultWriteObject(); 
+ stream.writeObject(b); 
+ } 
+ private void readObject(ObjectInputStream stream) throws IOException, 
+ ClassNotFoundException { 
+ stream.defaultReadObject(); 
+ b = (String) stream.readObject(); 
+ } 
+} 
+What will happen when he attempts to compile and execute the above program?
+A. It will produce the output as:
+Before:
+Not Transient: Test1
+Transient: Test2
+After:
+Not Transient: Test1
+Transient: null
+
+
+QUESTION 3.12 
+Q 12: Vandana works as a Software Developer for SoftSample Inc. She writes the following program:
+import java.io.*; 
+class X implements Externalizable { 
+ public X() { 
+ System.out.println("X Constructor invoking"); 
+ } 
+ public void writeExternal(ObjectOutput out) throws IOException { 
+ System.out.println("X.writeExternal calling"); 
+ } 
+ public void readExternal(ObjectInput in) throws IOException, 
+ ClassNotFoundException { 
+ System.out.println("X.readExternal calling"); 
+ } 
+} 
+class Y implements Externalizable { 
+ Y() { 
+ System.out.println("Y Constructor invoking"); 
+ } 
+ public void writeExternal(ObjectOutput out) throws IOException { 
+ System.out.println("Y.writeExternal calling"); 
+ } 
+ public void readExternal(ObjectInput in) throws IOException, 
+ ClassNotFoundException { 
+ System.out.println("Y.readExternal calling"); 
+ } 
+} 
+public class TryQuestion { 
+ public static void main(String[] args) throws IOException, 
+ ClassNotFoundException { 
+ System.out.println("Constructing objects b1 and b2:"); 
+ X b1 = new X(); 
+ Y b2 = new Y(); 
+ ObjectOutputStream o = new ObjectOutputStream(new FileOutputStream 
+ ("File.out")); 
+ System.out.println("Saving objects b1 and b2:"); 
+ o.writeObject(b1); 
+ o.writeObject(b2); 
+ o.close(); 
+ ObjectInputStream in = new ObjectInputStream(new FileInputStream 
+ ("File.out")); 
+ System.out.println("Recovering object b1:"); 
+ b1 = (X) in.readObject(); 
+ } 
+} 
+What will happen when she tries to compile and execute the preceding program?
+
+B. It will produce the output as:
+Constructing objects b1 and b2:
+X Constructor invoking
+Y Constructor invoking
+Question Bank 3: API Contents   9 
+Saving objects b1 and b2:
+X.writeExternal calling
+Y.writeExternal calling
+Recovering object b1:
+X.readExternal calling
+Saving objects b1 and b2:
+X.writeExternal calling
+Y.writeExternal calling
+Recovering object b1:
+X Constructor invoking
+X.readExternal calling
+
+
+
+QUESTION 3.13 
+Q 13: Hemant works as a Programmer for SoftSample Inc. His computer system has no instance of file1.txt and
+file2.txt files. Hemant writes the following program:
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String[] args) { 
+ File file1 = new File("file1.txt"); 
+ File file2 = new File("file2.txt"); 
+ if (!file1.exists() || !file2.exists()) { 
+ System.out.println("One or both files do not exist"); 
+ } 
+ try { 
+ FileInputStream fis1 = new FileInputStream(file1); 
+ FileInputStream fis2 = new FileInputStream(file2); 
+ int i1 = fis1.read(); 
+ int i2 = fis2.read(); 
+ fis1.close(); 
+ fis2.close(); 
+ } catch (IOException e) { 
+ System.out.println("IO exception");} 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program, first time?
+
+C. It will produce the output as:  
+One or both files do not exist
+IO exception
+
+QUESTION 3.14 
+Q 14: Hemani works as an Application Developer for SoftSample Inc. She writes the following program:
+import java.io.*; 
+public class TryQuestion{ 
+ public static void main(String[] args) { 
+ try { 
+ FileReader file = new FileReader("SourceReader.java"); //1 
+ BufferedReader buff = new BufferedReader(file); //2 
+ boolean eof = false; 
+ while (!eof) { 
+ String line = file.readLine(); //3 
+ if (line == null) 
+ eof = true; 
+ else 
+ System.out.println(line); 
+ } buff.close(); 
+ } catch (IOException e) { 
+ System.out.println("Error - " + e.toString()); 
+}}} 
+What will happen when she tries to compile and execute the above program (assume that the
+SourceReader.java file already exists on Hemani’s computer system)?
+C. It will produce compile error at line 3.    
+QUESTION 3.15 
+Q 15: Sumit works as a Programmer for SoftSample Inc. He writes the following program:
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String[] args) { 
+ try { 
+ PrintWriter pw = new PrintWriter("PrintWriterOutput.txt"); //1 
+ pw.println("PrintWriter class is easy to use."); //2 
+ pw.println(1234); 
+ pw.close(); //3 
+ } catch (IOException e) { 
+} } } 
+What will happen when he tries to compile and execute the preceding program?
+
+D.    It will compile and execute successfully.
+Question Bank 3: API Contents   11 
+
+QUESTION 3.16 
+Q 16: Mohit works as a Programmer for SoftTech Inc. He writes the following program:
+import java.text.*; 
+public class TryQuestion { 
+ public static void main(String[] args) { 
+ double d=1234.56789; 
+ NumberFormat myFormat = NumberFormat.getInstance(); 
+ myFormat.setMaximumIntegerDigits(3); 
+ String radianString = myFormat.format(d); 
+ myFormat.setMaximumFractionDigits(3); 
+ String gradString =myFormat.format(d); 
+ myFormat.setMinimumFractionDigits(2); 
+ String degreeString = myFormat.format(d); 
+ System.out.println(gradString); 
+ System.out.println(radianString); 
+ System.out.println(degreeString); 
+} } 
+What will happen when he tries to compile and execute the preceding program?
+
+B. It will produce the output as:  
+234.568
+234.568
+234.568
+
+QUESTION 3.17 
+Q 17: Dheeraj works as a Programmer for Kogent Solutions Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main( String args[] ) { 
+ String s1 = new String( "hello" ); 
+ String s2 = new String( "GOODBYE" ); 
+ System.out.printf( "s1 = %s\ns2 = %s\n", s1, s2); 
+ System.out.printf( "s1 in uppercase = %s\n", s1.toUpperCase() ); 
+ System.out.printf( "s2 in lowercase = %s\n\n", s2.toLowerCase() ); 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program?
+A. It will produce the output as:  
+s1 = hello
+
+
+QUESTION 3.18 
+Q 18: Shilpa works as a Programmer for Kogent Solutions Inc. She writes the following program:
+public class TryQuestion { 
+ public static void main(String args[]) { 
+ String str1 = "First String"; 
+ String str2 = "Second String"; 
+ String str3 = str1; 
+ System.out.println("Length of str1: " + str1.length()); 
+ System.out.println("Char at index 2 in str1: " + str1.charAt(2)); 
+ if(str1.equals(str2)) 
+ System.out.println("str1 == str2"); 
+ else 
+ System.out.println("str1 != str2"); 
+ if(str1.equals(str3)) 
+ System.out.println("str1 == str3"); 
+ else 
+ System.out.println("str1 != str3"); 
+ } 
+} 
+What will happen when she tries to compile and execute the preceding program?
+
+B. It will produce the output as:  
+Length of str1: 12
+Char at index 2 in str1: r
+str1 != str2
+str1 == str3
+
+QUESTION 3.19 
+Q 19: Shivam works as a Programmer for Kogent Solutions Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String args[]) { 
+Question Bank 3: API Contents   13 
+ String s1 = "one"; 
+ String s2 = "one"; 
+ String s3 = "two"; 
+ String s4 = "ONE"; 
+ System.out.println(s1 + " equals " + s2 + " -> " + s1.equals(s2)); 
+ System.out.println(s1 + " equals " + s3 + " -> " + s1.equals(s3)); 
+ System.out.println(s1 + " equals " + s4 + " -> " + s1.equals(s4)); 
+ System.out.println(s1 + " equalsIgnoreCase " + s4 + " -> " + 
+ s1.equalsIgnoreCase(s4)); 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program?
+
+D. It will produce the output as:  
+one equals one ‐> true
+one equals two ‐> false
+one equals ONE ‐> false
+one equalsIgnoreCase ONE ‐> true
+
+QUESTION 3.20 
+Q 20: Nirmal works as a Programmer for Kogent Solutions Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String args[]) { 
+ String s1 = "MyString"; 
+ String s2 = new String(s1); 
+ System.out.println(s1 + " equals " + s2 + " is " + s1.equals(s2)); 
+ System.out.println(s1 + " == " + s2 + " is " + (s1 == s2)); 
+ } 
+} 
+What will happen when he attempts to compile and execute the preceding program?
+
+C. It will produce the output as:  
+MyString equals MyString is true
+MyString == MyString is false
+
+
+QUESTION 3.21 
+Q 21: Sanjay works as a Software Developer for HighNet Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main( String args[] ) { 
+ String s1 = new String( "hello" ); 
+ String s2 = new String( "india" ); 
+ System.out.printf( "s1 = %s\ns3 = %s\n", s1, s2 ); 
+ System.out.printf("Replace 'l' with 'L' in s1: %s\n", s1.replace('l','L')); 
+ System.out.printf("Replace 'i' with 'I' in s2: %s", s2.replace('d','D')); 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program?
+
+B. It will produce the output as:  
+s1 = hello
+s3 = india
+Replace ʹlʹ with ʹLʹ in s1: heLLo
+Replace ʹiʹ with ʹIʹ in s2: inDia
+
+QUESTION 3.22 
+Q 22: Mahima works as a Programmer in SoftTech Inc. She writes the following program:
+public class TryQuestion { 
+public static void main(String str[]) { 
+String s = new String("A bird is"); 
+s.append("flying"); 
+System.out.println("The value stored in String class is : "+s); 
+StringBuffer sb = new StringBuffer("A bird is"); 
+sb.append("flying"); 
+System.out.println("The value stored in StringBuffer class is : "+sb); 
+StringBuilder sbi = new StringBuilder("A bird is"); 
+sbi.append("flying"); 
+System.out.println("The value stored in StringBuilder class is : "+sbi); 
+} 
+} 
+What will happen when she tries to compile and execute the preceding program?
+
+D. It will give compilation error.
+
+QUESTION 3.23 
+Q 23: Manish works as a Programmer for SoftTech Inc. He writes the following program:
+import java.util.*; 
+import java.io.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ Console cns=System.console(); //1 
+ if(cns!=null) { 
+ Scanner scan=new Scanner(cns.reader()); //2 
+ double value=0.0; 
+ while(value!=1) { 
+ cns.printf("Please enter your salary\n"); 
+ value=cns.nextDouble(); //3 
+ if(value>10000) { 
+ cns.printf("You do not require increment"); 
+ System.exit(0); 
+ } 
+ } 
+ } 
+ else { 
+ throw new RuntimeException("No console is available"); 
+ } 
+} 
+} 
+What will happen when he tries to compile and execute the preceding program?
+
+C. It will give compilation error at line 3.
+
+
+QUESTION 3.24 
+Q 24: Maria works as a Programmer for SoftTech Inc. She writes the following program:
+import java.util.*; 
+import java.text.*; 
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ Date date = new Date(); 
+ DateFormat df; 
+ df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.US); 
+ System.out.println("United States: " + df.format(date)); 
+ df = DateFormat.getDateInstance(DateFormat.FULL, Locale.US); 
+16 SCJP: Sun Certified Programmer for Java 6  
+ System.out.println("United States: " + df.format(date)); 
+ } 
+} 
+What will happen when she tries to compile and execute the preceding program? (Assume that the
+current date is 5th August 2008)
+A. It will produce the output as:  
+United States: Aug 5, 2008
+United States: Tuesday, August 5, 2008
+
+
+QUESTION 3.25 
+Q 25: Mary works as a Programmer for SoftTech Inc. She writes the following program:
+public class TryQuestion { 
+ public static void main(String[] str) { 
+ System.out.println("\\"); 
+ System.out.println("\\\\"); 
+ } 
+} 
+What will happen when she tries to compile and execute the preceding program?
+
+B. It will produce the output as:  
+\
+\\
+
+QUESTION 3.26 
+Q 26: Vikash works as a Programmer for DreamTech Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String[] str) { 
+ System.out.println(Integer.toString('A',10)); 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program?
+A. It will produce the output as:  
+65
+
+
+QUESTION 3.27 
+Q 27: Kabir works as a Programmer for SoftTech Inc. He writes the following program:
+public class TryQuestion { 
+public static void main(String[] str) { 
+System.out.println(400+Integer.valueOf("200")); 
+}} 
+What will happen when he tries to compile and execute the above program?
+A. It will produce the output as:  
+600
+
+
+QUESTION 3.28 
+Q 28: Suchita works as a Programmer for DreamTech Inc.  She writes the following program:
+public class TryQuestion { 
+public static void main(String[] str) { 
+ char[] ch = {'a','b','c','d'}; 
+ System.out.println(Character.valueOf(ch)); 
+}} 
+What will happen when she tries to compile and execute the preceding program?
+D. It will give compilation error.
+
+Q 29: Which of the following statements are true about the metacharacters?
+C. \w: It is used for a word character    D.    \W: It is used for a non‐ word character
+ 
+
+QUESTION 3.30 
+Q 30: Manisha works as a Programmer for SoftTech Inc. She writes the following program:
+public class TryQuestion { 
+ public static void main(String[] str) { 
+ int x=10; 
+ int y=20; 
+ System.out.println("Total is: "+x+y); 
+ String s="10"; 
+ s=s.concat("20"); 
+ System.out.println("Total is: "+s); 
+}} 
+What will happen when she tries to compile and execute the preceding program?
+
+B. It will produce the output as:  
+Total is: 1020
+Total is: 1020
+
+QUESTION 3.31 
+Q 31: Ritu works as a Programmer for Kogent Solutions Inc. She writes the following program:
+public class TryQuestion { 
+ public static void main(String[] str) { 
+ String s1 = "hello world"; 
+ System.out.println(s1); 
+ int x=s1.length(); 
+ for(int i=0;i<x;i+=2) 
+ System.out.print(s1.charAt(i)); 
+}} 
+What will happen when she tries to compile and execute the preceding program?
+A. It will produce the output as:  
+hello world
+hlowrd
+
+
+QUESTION 3.32 
+Q 32: Mehtab works as a Programmer for Kogent Solutions Inc. He writes the following program:
+import java.util.regex.*; 
+import java.util.*; 
+public class TryQuestion { 
+public static void main(String s[]) { 
+Pattern pat=Pattern.compile("(hello){1}-(world){2}"); 
+Matcher mat=null; 
+mat=pat.matcher("hello-worldworld"); 
+System.out.println(mat.matches()); 
+mat=pat.matcher("(hello){1}-(world){2}"); 
+Question Bank 3: API Contents   19 
+System.out.println(mat.matches()); 
+} 
+} 
+What will happen when he tries to compile and execute the preceding program?
+
+B. It will produce the output as:
+true
+false
+
+QUESTION 3.33 
+Q 33: Deepak works as a Programmer for Kogent Solutions Inc. He writes the following program:
+public class TryQuestion { 
+public static void main(String sr[]) { 
+Integer i=null; 
+i=new Integer(100); 
+int j=200; 
+i=j; 
+i=300; 
+System.out.println(i++); 
+Short s=10; 
+i=s; 
+System.out.println(i--); 
+} 
+} 
+What will happen when he tries to compile and execute the preceding program?
+
+B. It will give compilation error. 
+
+QUESTION 3.34 
+Q 34: Rajeev works as a Programmer for SoftTech Inc. He writes the following program:
+public class TryQuestion { 
+public static void main(String str[]) { 
+ String s1=Double.toString(65); //1 
+ String s2=Double.toHexString(65); //2 
+ System.out.println(s1+" "+s2); 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program?
+A. It will produce the output as:  
+65.0 0x1.04p6
+
+QUESTION 3.35 
+Q 35: Mala works as a Programmer for EasySoftTech Inc. She writes the following program:
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ String str1="ClassAndObject"; 
+ String str1="ObjectAndClass"; //1 
+ String str2="ObjectAndClass"; //2 
+ if(str2.equals(str1)) //3 
+ { 
+ System.out.println("They are equal"); 
+ } 
+ else { 
+ System.out.println("They are not equal"); 
+ } 
+ } 
+} 
+What will happen when she tries to compile and execute the preceding program?
+
+C. It will give compilation error at line
+marked as 1.
+  
+
+QUESTION 3.36 
+Q 36: Manish works as a Software Developer for NewTech Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ Integer num=10; 
+ Boolean bl; 
+ bl=(num instanceof Integer); 
+ System.out.println(bl); 
+ bl=(num instanceof Number); 
+ System.out.println(bl); 
+}} 
+What will happen when he tries to compile and execute the preceding program?
+A. It will produce the output as:  
+true
+true
+
+
+Question Bank 3: API Contents   21 
+QUESTION 3.37 
+Q 37: Vineet works as an Application Developer for AllienSoftTech Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ Boolean bl1=new Boolean("true"); //1 
+ boolean bl2=true; 
+ if(bl1.equals(bl2)) //2 
+ System.out.println("They are equal"); 
+ else 
+ System.out.println("They are not equal"); 
+ } 
+} 
+What will happen when he attempts to compile and execute the preceding program?
+A. It will produce the output as:  
+They are equal
+
+
+QUESTION 3.38 
+Q 38: Vineet works as a Software Developer for AllienSoftTech Inc. He writes the following program:
+import java.util.*; 
+public class TryQuestion { 
+public static void main(String str[]){ 
+int total=0; 
+ArrayList <Double> arrl=new ArrayList <Double>(); 
+for(double d=0.0; d<10.0;d++) 
+{ 
+arrl.add(d); 
+} 
+for(double d2:arrl) 
+{ 
+total+=d2; 
+} 
+System.out.println("Total = "+total); 
+} 
+} 
+What will happen when he tries to compile and execute the preceding program?
+
+B. It will produce the output as:  
+Total = 45
+
+
+
+QUESTION 3.39 
+Q 39: Aditya works as a Programmer for AllienSoftTech Inc. He writes the following program:
+public class TryQuestion { 
+ static public void display(Integer num) { 
+ System.out.println("Integer"); 
+22 SCJP: Sun Certified Programmer for Java 6  
+ } 
+ static public void display(float num) { 
+ System.out.println("Float"); 
+ } 
+ static public void display(double num) { 
+ System.out.println("Double"); 
+ } 
+ public static void main(String str[]) { 
+ display(50); 
+ display(50.5); 
+ } 
+} 
+What will happen when Aditya tries to compile and execute the preceding program?
+A. It will produce the output as:  
+Float
+Double
+
+
+QUESTION 3.40 
+Q 40: Sumit works as a Programmer in AllienSoftTech Inc. He writes the following program:
+public class TryQuestion { 
+ static public void display(Integer num) { 
+ System.out.println("Integer"); 
+ } 
+ static public void display(Float num) { 
+ System.out.println("Float"); 
+ } 
+ static public void display(Double num) { 
+ System.out.println("Double"); 
+ } 
+ public static void main(String str[]) { 
+ display(50); 
+ display(50.5); 
+ } 
+} 
+What will happen when he tries to compile and execute the preceding program?
+A. It will produce the output as:  
+Float
+Double
+
+
+QUESTION 3.41 
+Q 41: Renu works as a Java Programmer for AllienSoftTech Inc. She writes the following program:
+public class TryQuestion { 
+ static public void display(Integer num) { 
+ System.out.println("Integer"); 
+ } 
+ static public void display(float num) { 
+ System.out.println("Float"); 
+ } 
+ static public void display(double num) { 
+ System.out.println("Double"); 
+ } 
+ public static void main(String str[]) { 
+ display(50); 
+ } 
+} 
+C. It will produce the output as:  
+Float
+
+
+QUESTION 3.42 
+Q 42: Kabir works as a Programmer for AllienSoftTech Inc. He writes the following program:
+public class TryQuestion { 
+ public static void main(String str[]) { 
+ float f1=3.14f; 
+ Float f2; 
+ f2=f1; //1 
+ System.out.println(f2); 
+ Double d1=f1; //2 
+ double d2=d1; //3 
+ System.out.println(d2); 
+ } 
+} 
+What will happen when Kabir tries to compile and execute the preceding program?
+
+D. It will give compilation error at the line marked as 2.
+  
+
+QUESTION 3.43 
+Q 43: Charu works as a Programmer for AllienSoftTech Inc. She writes the following program:
+import java.util.regex.*; 
+public class TryQuestion { 
+ public static void main(String str[]){ 
+ Pattern p = Pattern.compile("Charu"); 
+ String nameString = "My name is Charu. Charu Verma."; 
+ Matcher matcher = p.matcher(nameString); 
+ matcher.find(); 
+ System.out.println(matcher.group()); 
+ } 
+} 
+What will happen when Charu attempts to compile and execute the preceding program?
+A. It will produce the output as:  
+Charu
